@@ -38,7 +38,7 @@ class BillOptimizerApp:
     def load_bills(self):
         file_path = filedialog.askopenfilename()
         try:
-            self.df = load_data(file_path)
+            self.df = (file_path)
             messagebox.showinfo("Success", "Bills loaded successfully.")
         except Exception as e:
             messagebox.showerror("Error", str(e))
@@ -46,20 +46,20 @@ class BillOptimizerApp:
     def optimize_bills(self):
         try:
             budget = float(self.budget_entry.get())
-            self.optimized_df = optimize_bill(self.df, budget)
+            self.optimized_df = (self.df, budget)
             messagebox.showinfo("Success", "Bills optimized successfully.")
         except Exception as e:
             messagebox.showerror("Error", str(e))
 
     def plot_expenses(self):
         if self.df is not None:
-            plot_expense(self.df)
+            (self.df)
         else:
             messagebox.showerror("Error", "No bills data loaded.")
 
     def plot_optimized_expenses(self):
         if self.optimized_df is not None:
-            plot_optimized_expense(self.optimized_df)
+           (self.optimized_df)
         else:
             messagebox.showerror("Error", "No optimized bills data available.")
 
